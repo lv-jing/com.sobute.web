@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+  <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+  <meta HTTP-EQUIV="Expires" CONTENT="0">
+  <script>
+    // 不兼容 performance.timing 的浏览器
+    window.pageStartTime = Date.now()
+  </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>苏博特科研管理系统</title>
+  <link rel="stylesheet" href="/static/fonts/iconfont.css">
+  <link rel="stylesheet" href="/static/css/swiper.min.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">   -->
+  <style>
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: 20px;
+    }
+
+    .swiper-button-next {
+      height: 100%;
+      top: 22px;
+      right: 0;
+      background: #5386E9;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    .swiper-button-prev {
+      height: 100%;
+      border-radius: 5px;
+      top: 22px;
+      left: 0;
+      background: #5386E9;
+      color: #fff;
+    }
+
+    .first-loading {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      background: url("/static/images/bg.png") center no-repeat;
+
+    }
+  </style>
+  <script>
+    // 白屏结束时间
+    window.firstPaint = Date.now()
+    // 白屏时间
+    let tim = firstPaint - performance.timing.navigationStart || pageStartTime
+    console.log(tim)
+  </script>
+</head>
+
+<body>
+<noscript>
+  <strong>We're sorry but com.sobute.web doesn't work properly without JavaScript enabled. Please enable it to
+    continue.</strong>
+</noscript>
+<script src="/static/js/swiper.min.js"></script>
+<!-- <script src="https://unpkg.com/swiper/js/swiper.min.js"> </script> -->
+
+
+<!-- <div id="loader-wrapper">
+  <div id="loader"></div>
+</div> -->
+<div class="first-loading" id="Loading">
+  <dl class="" style="flex: 1;">
+    <dt>
+
+      <dl class="tc header-title">
+        <dt>
+          <h2 class="fs24 text-00FFF0">欢迎进入</h2>
+          <h2 class="fs24 text-00FFF0">苏博特研究院科研管理系统</h2>
+        </dt>
+        <dd>
+          <img src="/static/images/title_bg_left.png" style="height:42px" alt/>
+          <img src="/static/images/title_bg_right.png" style="height:42px" alt/>
+        </dd>
+      </dl>
+
+
+    </dt>
+    <dt style=" background: #d8fef4;margin:20px 0;opacity: 0.6;">
+      <img src="/static/images/loading.gif" width="400" alt="">
+    </dt>
+    <dd>系统参数配置中，请稍后......</dd>
+  </dl>
+
+
+</div>
+<div id="app">
+
+</div>
+
+<!-- built files will be auto injected -->
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+module.exports = {
+  productionSourceMap: false,
+  css: {
+    loaderOptions: {
+      scss: {
+        // 根据自己样式文件的位置调整
+        prependData: `@import "@/assets/common.scss";`
+      }
+    }
+  },
+  //transpileDependencies:[]
+  devServer: {
+    proxy: {
+      '^/ReportServer': {     //这里最好有一个 /
+        target: 'http://192.168.101.40:9999/WebReport/ReportServer',  // 本地后台接口域名
+        ws: true,        //如果要代理 websockets，配置这个参数
+        secure: false,  // 如果是https接口，需要配置这个参数
+        changeOrigin: true, //是否跨域
+        pathRewrite: {
+          '^/ReportServer': ''
+        }
+      },
+      '^/dtt-project': {     //这里最好有一个 /
+         // target: 'http://127.0.0.1:9090/dtt-project',  // 本地后台接口域名
+       target: 'http://192.168.101.40/dtt-project',  // 正式后台接口域名
+      //  target:"http://192.168.2.98:9090/dtt-project",
+        ws: true,        //如果要代理 websockets，配置这个参数
+        secure: false,  // 如果是https接口，需要配置这个参数
+        changeOrigin: true, //是否跨域
+        pathRewrite: {
+          '^/dtt-project': ''
+        }
+      }
+
+    }
+  }
+}
